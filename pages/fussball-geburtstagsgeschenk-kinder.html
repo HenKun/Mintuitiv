@@ -68,7 +68,9 @@
 <p>Ich bin Henning, Gründer von Mintuitiv. Mit diesem Projekt möchten ich und einige Helfer, Schülern und Schülerinnen die Faszination der MINT-Fächer näher bringen - und das mit Spaß!</p>
 <p>Ziel dieser Hefte ist es, fußballbegeisterte Kinder für die Mathematik, insbesondere die Logik zu begeistern. Als kleiner, neuer Verlag haben wir besonders viel Energie und Leidenschaft in die Erstellung der Rätsel gesteckt.</p>
 </div>
+												
 <script type="text/javascript">// <![CDATA[
+			 
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
@@ -119,19 +121,6 @@
            var product = ui.components.product[0];
            product.updateVariant('Edition', edition);
          }
-       },
-       "openCheckout": function (product) {
-          var sku = product.selectedVariant.sku;
-          if (sku == 'Min-Log-Yellow') {
-             id = '40065888846001';
-          } else if (sku == 'Min-Log-White') {
-             id = '40062246322353';
-          } else {
-             id = '40062246256817';
-          } 
-          window.location.assign('http://www.mintuitiv.de/cart/add?id='+id+'&quantity=1');
-throw new Error("Go to cart and stop execution.");
-return false;
        }
     },
 
@@ -165,7 +154,6 @@ return false;
         "padding-bottom": "16px"
       }
     },
-    "buttonDestination": "checkout",
     "contents": {
       "img": false,
       "imgWithCarousel": true,
@@ -247,8 +235,7 @@ return false;
     },
     "contents": {
       "note": true
-    },
-    "popup": false
+    }
   },
   "toggle": {
     "styles": {
@@ -271,6 +258,7 @@ return false;
     });
   }
 })();
+	   
 // ]]></script>
       
 	</div>
