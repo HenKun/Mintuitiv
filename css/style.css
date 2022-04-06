@@ -1,0 +1,330 @@
+:root {
+  --accent-color: #5791a1;
+  --accent-color-highlight: #416c78;
+  --text-color: #222;
+  --color-image-overlay: #685858;
+  --opacity-image-overlay: 0.3;
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-focus: #1d5c64;
+  --color-btn-primary: #29818b;
+
+  
+}
+body,html {
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	font-size: 16px;
+	color: var(--text-color);
+	line-height: 1.5;
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+p {
+	margin: 20px 0;
+}
+h1 {
+	line-height: 1;
+	text-shadow: 0 0 4px rgb(0 0 0 / 40%);
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.page-width {
+	max-width: 1000px;
+	margin:auto;
+	padding: 0 20px;
+	position: relative;
+	z-index: 2;
+}
+.page-width::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+#logo {
+	max-width: 130px;
+	margin-left: 20px;
+	float:left;
+}
+#logo a {
+	display:inline-block;
+}
+#nav-links {
+	float:right;
+	margin-right: 20px;
+}
+#nav-links a {
+	display: inline-block;
+	padding: 5px 10px;
+	text-decoration:none;
+	color: var(--text-color);
+}
+#nav-links a:hover {
+	text-decoration:underline;
+}
+#top-note {
+	text-align:center;
+	background: #444;
+	color: #fff;
+	font-weight:bold;
+	font-size:smaller;
+	padding: 10px 0;
+}
+nav {
+	padding: 20px 0;
+}
+nav:after {
+	content: "";
+	clear:both;
+	display:block;
+}
+#main-header {
+	position:relative;
+	padding: 20px 0;
+	text-align:center;
+	color: #fff;
+	background: rgb(87,145,161);
+    background: linear-gradient(55deg, rgba(76,95,34,1) 0%, rgba(103,139,59,1) 25%, rgba(184,220,183,1) 50%, rgba(107,190,210,1) 75%, rgba(36,104,97,1) 100%);
+}
+#main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-image-overlay);
+    opacity: var(--opacity-image-overlay);
+    z-index: 1;
+}
+#main-header #sub-title {
+	font-size: larger;
+}
+a.button {
+	display:inline-block;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: smaller;
+}
+a.button.secondary {
+	border: 1px solid var(--accent-color);
+	color: var(--accent-color);
+}
+a.button.primary {
+	border: 1px solid var(--accent-color);
+	color: #fff;
+	background: var(--accent-color);
+}
+a.button.secondary:hover {
+	border: 1px solid var(--accent-color-highlight);
+	color: var(--accent-color-highlight);
+}
+a.button.primary:hover {
+	border: 1px solid var(--accent-color-highlight);
+	background: var(--accent-color-highlight);
+}
+section {
+	padding: 20px 0;
+}
+section h2 {
+	text-align:center;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+section ul {
+list-style: disc outside;
+}
+section ul, section ol {
+    margin: 0 0 17.5px 35px;
+}
+section li {
+    margin-bottom: 4px;
+    list-style: inherit;
+}
+section a {
+	color: var(--text-color);
+}
+h3 {
+	font-size: 16px;
+}
+.highlight {
+	color: #fff;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+	background: rgb(87,145,161);
+    background: linear-gradient(55deg, rgba(76,95,34,1) 0%, rgba(103,139,59,1) 25%, rgba(184,220,183,1) 50%, rgba(107,190,210,1) 75%, rgba(36,104,97,1) 100%);
+}
+.text-img {
+    width: 100%;
+	height:auto;
+}
+blockquote {
+    border-color: #eee;
+    border-width: 1px 0;
+    border-style: solid;
+    font-style: normal;
+    text-align: center;
+    padding: 30px 30px;
+    margin: 0;
+	margin-bottom: 20px;
+}
+
+footer {
+	background: #f5f5f5;
+	padding: 30px 0;
+}
+footer ul {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+footer ul a {
+	display: inline-block;
+	padding: 10px 0;
+	text-decoration:none;
+	color:#222;
+}
+footer ul a:hover {
+	text-decoration:underline;
+}
+footer .footer-heading {
+	font-weight:bold;
+	margin-bottom: 15px;
+}
+footer .payment-icon {
+	display:inline-block;
+	margin-right: 5px;
+}
+.col {
+	margin-bottom: 30px;
+}
+.col img {
+	max-width: 300px;
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+table {
+	table-layout: fixed;
+	margin-bottom: 27.5px;
+	width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td {
+    text-align: left;
+    border: 1px solid #eee;
+    padding: 10px 14px;
+}
+.scrollable-wrapper {
+    max-width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.btn {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 8px 15px;
+    background-color: var(--color-btn-primary);
+    color: var(--color-btn-primary-text);  
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: normal;
+}
+.btn:hover, .btn:focus {
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-focus);
+}
+.btn--small {
+    padding: 8px 10px;
+    font-size: calc(((12) / (var(--font-size-base))) * 1em);
+    line-height: 1;
+}
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-btn-primary);
+    border-color: var(--color-btn-primary);
+}
+.btn--secondary:hover, .btn--secondary:focus {
+	background-color: transparent;
+    color: var(--color-btn-primary-focus);
+    border-color: var(--color-btn-primary-focus);
+}
+.buy-button {
+    min-height: 600px;
+}
+.buy-button > div {
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 768px) {
+	
+	.cols {
+		display:flex;
+	}
+	.col {
+		flex: 1 1 0;
+		width: 0;
+		padding-right: 30px;
+	}
+	.col:last-child {
+		padding-right: 0;
+	}
+	footer .cols {
+		  justify-content: space-between;
+	}
+	footer .col {
+		width: auto;
+		flex:none;
+	}
+	#nav-links {
+		float:left;
+		margin-left: 100px;
+	}
+	section h2 {
+	text-align:left;
+}
+.text-img {
+    width: 320px;
+    max-width: 50%;
+}
+.buy-button {
+    float: left;
+}
+#bullets {
+    width: 40%;
+	float: right;
+}
+	
+}
+
+@media only screen and (min-width: 960px) {
+#bullets {
+    width: 60%;
+}
+}
