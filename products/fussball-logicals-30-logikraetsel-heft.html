@@ -47,7 +47,15 @@
 		 </div>
 		 <script type="text/javascript">
 			 
-			 
+			 HTMLSelectElement.prototype.contains = function( value ) {
+    for ( var i = 0, l = this.options.length; i < l; i++ ) {
+        if ( this.options[i].value == value ) {
+            return true;
+        }
+    }
+
+    return false;
+}
 			 
 			 function variantChange() {
     			let e = document.getElementById("prod-select");
@@ -66,8 +74,13 @@
   get: (searchParams, prop) => searchParams.get(prop),
 });
 let edition = params.edition;
-document.getElementById("prod-select").value = edition;
+			 
+			 if ( document.getElementById("prod-select").contains( edition ) ) {
+			 document.getElementById("prod-select").value = edition;
 			 variantChange();
+			 }
+			 
+
 		 </script>
 </div>
 <div id="bullets">
