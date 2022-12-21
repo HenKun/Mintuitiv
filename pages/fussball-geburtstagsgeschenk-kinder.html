@@ -27,8 +27,61 @@
 <section>
 	<div class="page-width">
    
-	 <div class="buy-button">
-<div id="product-component-1629813784026" class="shopify-buy-frame shopify-buy-frame--product shopify-buy__layout-vertical" style="max-width: 280px;"></div>
+	 <div class="buy-button" id="buy-button">
+		 <div style="max-width:280px">
+			 <div>
+<img id="cover-image" src="/images/CoverRot.png" />
+			 </div>
+			 <select id="prod-select" onchange="variantChange()">
+				 <option value="Rot" data-img="/images/CoverRot.png" data-url="https://www.amazon.de/dp/B097T521CW?&linkCode=ll1&tag=mintuitiv04-21&linkId=7e9f2c02de0c9a52aaf4f394ee4a4e0f&language=de_DE&ref_=as_li_ss_tl">Rot</option>
+				 <option value="Gelb" data-img="/images/CoverGelb.png" data-url="https://www.amazon.de/dp/B097T3ZCSJ?&linkCode=ll1&tag=mintuitiv04-21&linkId=f340375d0ccb8ec332081173bb7afe27&language=de_DE&ref_=as_li_ss_tl">Gelb</option>
+				 <option value="Weiß" data-img="/images/CoverWeiß.png" data-url="https://www.amazon.de/dp/B07H1FSYP6?&linkCode=ll1&tag=mintuitiv04-21&linkId=b90a711ff5dcdae554a25d30c32acd26&language=de_DE&ref_=as_li_ss_tl">Weiß</option>
+				 <option value="Gruen" data-img="/images/CoverGreen.png" data-url="https://www.amazon.de/dp/B0BQGVV2XG?&linkCode=ll1&tag=mintuitiv04-21&linkId=941481a70c3aac1d0b1a020861e29423&language=de_DE&ref_=as_li_ss_tl">Grün</option>
+				 <option value="Blau" data-img="/images/CoverBlue.png" data-url="https://www.amazon.de/dp/B0BQ99KTYB?&linkCode=ll1&tag=mintuitiv04-21&linkId=977d641e9f30872346a2ce3b7779162c&language=de_DE&ref_=as_li_ss_tl">Blau</option>
+				 <option value="RotGelb" data-img="/images/CoverRedYellow.png" data-url="https://www.amazon.de/dp/B0BQ99L8DP?&linkCode=ll1&tag=mintuitiv04-21&linkId=e337708695324acf63919004d5499ce2&language=de_DE&ref_=as_li_ss_tl">Rot-Gelb</option>
+			 </select>
+			 <div class="price"><strong>8,99 €</strong> <small>(inkl. MwSt.)</small></div>
+			 <div>
+			 <a id="amazon-button" class="button primary" href="https://www.amazon.de/dp/B097T521CW?&linkCode=ll1&tag=mintuitiv04-21&linkId=7e9f2c02de0c9a52aaf4f394ee4a4e0f&language=de_DE&ref_=as_li_ss_tl">Auf Amazon kaufen</a>
+			 </div>
+		 </div>
+		 <script type="text/javascript">
+			 
+			 HTMLSelectElement.prototype.contains = function( value ) {
+    for ( var i = 0, l = this.options.length; i < l; i++ ) {
+        if ( this.options[i].value == value ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+			 
+			 function variantChange() {
+    			let e = document.getElementById("prod-select");
+			 let value = e.value;
+			 let url = e.options[e.selectedIndex].dataset.url;
+			 let img = e.options[e.selectedIndex].dataset.img;
+			 
+			 let ab = document.getElementById("amazon-button");
+			 ab.href = url;
+			 
+			 let ci = document.getElementById("cover-image");
+			 ci.src = img;
+}
+			 
+			 const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+let edition = params.edition;
+			 
+			 if ( document.getElementById("prod-select").contains( edition ) ) {
+			 document.getElementById("prod-select").value = edition;
+			 variantChange();
+			 }
+			 
+
+		 </script>
 </div>
 <div id="bullets">
 <h2>Die Fußballüberraschung mit smartem Inhalt</h2>
