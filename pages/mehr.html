@@ -50,7 +50,7 @@
 			let list = document.getElementById("list-all");
 			
 			items.forEach(function (item) {
-				let href = 'http://www.amazon.com/dp/' + item.asin + '/ref=nosim?tag=mintuitiv04-21';
+				let href = 'http://www.amazon.de/dp/' + item.asin + '/ref=nosim?tag=mintuitiv04-21';
 				let itemWrapper= document.createElement('div');
 				itemWrapper.innerHTML= '<li><a target="_blank" href="' + href + '"><img src="' + item.img +  '" /><span>' + item.name + '</span></a><a class="button primary" target="_blank" href="' + href + '">Zu Amazon</a></li>';
 				var li = itemWrapper.firstChild;
