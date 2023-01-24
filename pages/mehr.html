@@ -32,24 +32,43 @@
 		#list-all li { width: 150px; display: inline-block; box-sizing: border-box; padding: 0 10px 25px 0;}
 		#list-all a {text-decoration: none; }
 	</style>
-   
-<ul id="list-all">
-</ul>
+	
+	<div id="list-all"></div>
       
 	  
 	  <script type="text/javascript">
 			let items = [
-				{ "name": "Fußball Logicals, Rote Edition", "asin": "B097T521CW", "img": "/images/CoverRot.png" },
-				{ "name": "Fußball Logicals, Gelbe Edition", "asin": "B097T3ZCSJ", "img": "/images/CoverGelb.png" },
-				{ "name": "Fußball Logicals, Weiße Edition", "asin": "B07H1FSYP6", "img": "/images/CoverWeiß.png" },
-				{ "name": "Fußball Logicals, Grüne Edition", "asin": "B0BQGVV2XG", "img": "/images/CoverGreen.png" },
-				{ "name": "Fußball Logicals, Blaue Edition", "asin": "B0BQ99KTYB", "img": "/images/CoverBlue.png" },
-				{ "name": "Fußball Logicals, Rote-Gelbe Edition", "asin": "B0BQ99L8DP", "img": "/images/CoverRedYellow.png" },
+				{ "name": "Fußball Logicals, Rote Edition", "asin": "B097T521CW", "img": "/images/CoverRot.png", "group": "Logicals" },
+				{ "name": "Fußball Logicals, Gelbe Edition", "asin": "B097T3ZCSJ", "img": "/images/CoverGelb.png", "group": "Logicals" },
+				{ "name": "Fußball Logicals, Weiße Edition", "asin": "B07H1FSYP6", "img": "/images/CoverWeiß.png", "group": "Logicals" },
+				{ "name": "Fußball Logicals, Grüne Edition", "asin": "B0BQGVV2XG", "img": "/images/CoverGreen.png", "group": "Logicals" },
+				{ "name": "Fußball Logicals, Blaue Edition", "asin": "B0BQ99KTYB", "img": "/images/CoverBlue.png", "group": "Logicals" },
+				{ "name": "Fußball Logicals, Rote-Gelbe Edition", "asin": "B0BQ99L8DP", "img": "/images/CoverRedYellow.png", "group": "Logicals" },
 			];
 			
-			let list = document.getElementById("list-all");
+			let container = document.getElementById("list-all");
+			let headings = [];
+			
 			
 			items.forEach(function (item) {
+			    headings.push(item.group);
+			});
+			
+			function onlyUnique(value, index, self) {
+			  return self.indexOf(value) === index;
+			}
+			
+			let uniqueHeadings = headings.filter(onlyUnique);
+			
+			uniqueHeadings.forEach(function (item) {
+				let itemWrapper= document.createElement('div');
+				itemWrapper.innerHTML= '<div><h2>' + item + '</h2><ul id="list-' + item.replace(/[^a-z0-9]/gi, '') + '"></ul></div>';
+				var section = itemWrapper.firstChild;
+				container.appendChild(section);
+			});
+			
+			items.forEach(function (item) {
+			    let list = document.getElementById("list-" + item.group.replace(/[^a-z0-9]/gi, ''));
 				let href = 'http://www.amazon.de/dp/' + item.asin + '/ref=nosim?tag=mintuitiv04-21';
 				let itemWrapper= document.createElement('div');
 				itemWrapper.innerHTML= '<li><a target="_blank" href="' + href + '"><img src="' + item.img +  '" /><span>' + item.name + '</span></a><a class="button primary" target="_blank" href="' + href + '">Zu Amazon</a></li>';
