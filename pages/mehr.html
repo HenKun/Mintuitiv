@@ -33,6 +33,7 @@
 		#list-all a {text-decoration: none; }
 	</style>
 	
+	<div><ul id="list-categories"></ul></div>
 	<div id="list-all"></div>
       
 	  
@@ -47,6 +48,7 @@
 			];
 			
 			let container = document.getElementById("list-all");
+			let categoriesContainer = document.getElementById("list-categories");
 			let headings = [];
 			
 			
@@ -62,9 +64,15 @@
 			
 			uniqueHeadings.forEach(function (item) {
 				let itemWrapper= document.createElement('div');
-				itemWrapper.innerHTML= '<div><h2>' + item + '</h2><ul id="list-' + item.replace(/[^a-z0-9]/gi, '') + '"></ul></div>';
+				itemWrapper.innerHTML= '<div id="list-container-' + item.replace(/[^a-z0-9]/gi, '') + '"><h2>' + item + '</h2><ul id="list-' + item.replace(/[^a-z0-9]/gi, '') + '"></ul></div>';
 				var section = itemWrapper.firstChild;
+				
+				let catWrapper= document.createElement('div');
+				catWrapper.innerHTML= '<li><a href="' + window.location.href.split('#')[0] + '#list-container-' + item.replace(/[^a-z0-9]/gi, '') + '">' + item + '</a></li>';
+				let cat = catWrapper.firstChild;
+				
 				container.appendChild(section);
+				categoriesContainer.appendChild(cat);
 			});
 			
 			items.forEach(function (item) {
