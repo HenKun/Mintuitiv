@@ -30,7 +30,7 @@ if (item in itemMapping) {
 	let asinOrIsbn = itemMapping[item]['asin'];
 	let tld = itemMapping[item]['tld'];
 
-	window.location.replace("amazon." + tld + "/review/create-review?&asin= " + asinOrIsbn);
+	window.location.replace("https://www.amazon." + tld + "/review/create-review?&asin=" + asinOrIsbn);
 } else {
 	document.getElementById("not-found").style.display = 'block';
 }
