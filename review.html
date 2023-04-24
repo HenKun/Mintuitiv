@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Redirecting to Review</title>
+</head>
+<body>
+<h1>Redirecting to Review</h1>
+<div id="not-found" style="display:none">
+<p>This item was not found.</p>
+<p>Dieser Artikel wurde nicht gefunden.</p>
+</div>
+<div><a href="https://www.mintuitiv.de" >Go to Homepage / Zur Homepage</a></div>
+<script>
+
+let itemMapping = {
+	'9798392371983': {
+		asin: '';
+		tld: 'co.uk'
+	}
+];
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+let item = params.item;
+
+if (item in itemMapping) {
+	let asinOrIsbn = itemMapping[item]['asin'];
+	let tld = itemMapping[item]['tld'];
+
+	window.location.replace("amazon." + tld + "/review/create-review?&asin= " + asinOrIsbn);
+} else {
+	document.getElemenetById("not-found").style.display = 'block';
+}
+
+
+
+</script>
+</body>
+</html>
